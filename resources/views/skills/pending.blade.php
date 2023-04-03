@@ -22,7 +22,6 @@
                 </tr>
             </thead>
             <tbody>
-                <p>Test push</p>
                 @foreach ($pendingSkills as $skill)
                     <tr>
                         <th>{{ $skill->user->name }}</th>
