@@ -1,0 +1,71 @@
+.header-image {
+  max-height: 300px;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+.motivation-section {
+  background-color: #f5f5f5;
+  padding: 60px 0;
+}
+
+.motivation-section img {
+  max-height: 500px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 100%;
+}
+
+.about-section {
+  padding: 60px 0;
+}
+
+.about-section img {
+  max-height: 500px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 100%;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: flex-end;
+}
+
+img.profile_pic {
+  height: 200px;
+  border-radius: 100%;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.top-1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffd700; /* gold */
+}
+
+.top-2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #c0c0c0; /* silver */
+}
+
+.top-3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #cd7f32; /* bronze */
+}
+
+.trophy {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  margin-right: 5px;
+}
