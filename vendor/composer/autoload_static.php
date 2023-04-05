@@ -521,6 +521,7 @@ class ComposerStaticInitab02fe01c996824d7d40acb5a6636321
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\ExerciseController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExerciseController.php',
         'App\\Http\\Controllers\\FooterController' => __DIR__ . '/../..' . '/app/Http/Controllers/FooterController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\OnlineUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/OnlineUserController.php',
