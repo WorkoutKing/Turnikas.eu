@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Skill extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id','category_id', 'youtube_link', 'number', 'approved'];
+    protected $fillable = ['user_id','category_id', 'number', 'approved'];
 
     public function scopePendingApproval($query)
     {

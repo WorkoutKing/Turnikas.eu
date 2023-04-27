@@ -1,6 +1,11 @@
 @extends('main')
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -36,20 +41,6 @@
                                     <input id="repetitions" type="number" class="form-control @error('repetitions') is-invalid @enderror" name="repetitions" value="{{ old('repetitions') }}" required autocomplete="repetitions">
 
                                     @error('repetitions')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="youtube_link" class="col-md-4 col-form-label text-md-right">YouTube Link (required)</label>
-
-                                <div class="col-md-6">
-                                    <input id="youtube_link" type="text" class="form-control @error('youtube_link') is-invalid @enderror" name="youtube_link" value="{{ old('youtube_link') }}" autocomplete="youtube_link">
-
-                                    @error('youtube_link')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

@@ -12,7 +12,6 @@ class Exercise extends Model
     protected $fillable = [
         'exercise_type',
         'repetitions',
-        'youtube_link',
         'user_id',
         'approved',
     ];

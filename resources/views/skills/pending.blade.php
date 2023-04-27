@@ -15,9 +15,9 @@
                 <tr>
                     <th>User</th>
                     <th>Category</th>
-                    <th>YouTube Link</th>
                     <th>Number</th>
                     <th>Points</th>
+                    <th>Video</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -26,9 +26,14 @@
                     <tr>
                         <th>{{ $skill->user->name }}</th>
                         <td>{{ $skill->category->name }}</td>
-                        <td><a href="{{ $skill->youtube_link }}" target="_blank">{{ $skill->youtube_link }}</a></td>
                         <td>{{ $skill->number }}</td>
                         <td>{{ $skill->category->points }}</td>
+                        <td>
+                            <video width="320" height="240" controls>
+                                <source src="{{ asset('storage/' . $skill->video) }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </td>
                         <td>
                             <form method="POST" action="{{ route('skills.approve', $skill) }}">
                                 @csrf

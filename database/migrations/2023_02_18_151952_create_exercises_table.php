@@ -17,7 +17,6 @@ class CreateExercisesTable extends Migration
             $table->id();
             $table->string('exercise_type');
             $table->integer('repetitions');
-            $table->string('youtube_link');
             $table->unsignedBigInteger('user_id');
             $table->integer('approved')->default(0);
             $table->timestamps();

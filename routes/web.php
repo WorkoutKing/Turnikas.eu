@@ -24,7 +24,28 @@ use Illuminate\Http\Request;
 
 // Home Page Route
 Route::get('/', [HomeController::class, 'index'])->name('index');
+    // Profile Route
+    Route::get('/profile', [UserController::class, 'profile']);
 
+    // Profile Picture Route
+    Route::post('/update-profile-picture', function (Request $request) {
+        $user = Auth::user();
+        if ($user->profile_picture_updated_at && $user->profile_picture_updated_at->addDay()->gt(now())) {
+            return back()->with('error', 'You can only change your profile picture once every 24 hours.');
+        }
+        if ($request->hasFile('profile_picture') && $request->file('profile_picture')->isValid()) {
+            if ($user->profile_picture) {
+                Storage::delete($user->profile_picture);
+            }
+            $path = $request->file('profile_picture')->store('public/profile-pictures');
+            $user->profile_picture = $path;
+            $user->profile_picture_updated_at = now();
+            $user->save();
+            return back()->with('success', 'Profile picture uploaded successfully.');
+        } else {
+            return back()->with('error', 'There was an error uploading the profile picture.');
+        }
+    })->name('update-profile-picture');
 // Roues By Roles
 Route::middleware(['auth', 'role:user'])->group(function () {
 
@@ -68,29 +89,6 @@ Route::middleware(['auth', 'role:superadmin'])->group(function () {
     Route::put('/exercises/{exercise}/approve', [ExerciseController::class, 'approve'])->name('exercises.approve');
     Route::get('/exercises/pending', [ExerciseController::class, 'pending'])->name('exercises.pending');
     Route::delete('/exercises/{exercise}', [ExerciseController::class, 'delete'])->name('exercises.delete');
-
-    // Profile Route
-    Route::get('/profile', [UserController::class, 'profile']);
-
-    // Profile Picture Route
-    Route::post('/update-profile-picture', function (Request $request) {
-        $user = Auth::user();
-        if ($user->profile_picture_updated_at && $user->profile_picture_updated_at->addDay()->gt(now())) {
-            return back()->with('error', 'You can only change your profile picture once every 24 hours.');
-        }
-        if ($request->hasFile('profile_picture') && $request->file('profile_picture')->isValid()) {
-            if ($user->profile_picture) {
-                Storage::delete($user->profile_picture);
-            }
-            $path = $request->file('profile_picture')->store('public/profile-pictures');
-            $user->profile_picture = $path;
-            $user->profile_picture_updated_at = now();
-            $user->save();
-            return back()->with('success', 'Profile picture uploaded successfully.');
-        } else {
-            return back()->with('error', 'There was an error uploading the profile picture.');
-        }
-    })->name('update-profile-picture');
 });
 
 

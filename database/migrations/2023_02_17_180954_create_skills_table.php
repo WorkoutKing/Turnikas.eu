@@ -17,14 +17,13 @@ class CreateSkillsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');
-            $table->string('youtube_link');
             $table->integer('number');
             $table->boolean('approved')->default(0);
             $table->timestamps();
         });
-        
+
     }
-    
+
 
     /**
      * Reverse the migrations.

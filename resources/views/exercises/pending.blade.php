@@ -33,7 +33,6 @@
                                             <td>{{ $exercise->exercise_type }}</td>
                                             <td>{{ $exercise->repetitions }}</td>
                                             <td>{{ $exercise->user->name }}</td>
-                                            <td><a href="{{ $exercise->youtube_link }}" target="_blank">{{ $exercise->youtube_link }}</a></td>
                                             <td>
                                                 <form method="POST" action="{{ route('exercises.approve', $exercise) }}">
                                                     @csrf

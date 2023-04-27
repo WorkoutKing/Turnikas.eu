@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\Facades\Image;
 
 class SkillController extends Controller
 {
@@ -19,17 +20,29 @@ class SkillController extends Controller
     {
         $validatedData = $request->validate([
             'category_id' => 'required|exists:categories,id',
-            'youtube_link' => 'required|url',
             'number' => 'required|integer',
+            'video' => 'required|mimetypes:video/avi,video/mpeg,video/quicktime,video/mp4|max:200000',
         ]);
+
         $skill = new Skill();
         $skill->category_id = $validatedData['category_id'];
-        $skill->youtube_link = $validatedData['youtube_link'];
         $skill->number = $validatedData['number'];
         $skill->user_id = auth()->id(); // set the authenticated user ID
-        $skill->save();
-        return redirect()->back()->with('message', 'Skill added successfully.');
+
+        if ($request->hasFile('video')) { // Check if a video file was uploaded
+            $videoPath = $request->file('video')->store('public/videos'); // Save the uploaded video file
+            $skill->video = str_replace('public/', '', $videoPath); // Save the path to the video file in the database
+        }
+
+        if ($skill->save()) {
+            return redirect()->back()->with('success', 'Skill added successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Failed to add skill.');
+        }
     }
+
+
+
     public function pending()
     {
         $pendingSkills = Skill::select('skills.*')

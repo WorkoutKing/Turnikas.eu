@@ -26,13 +26,11 @@ class ExerciseController extends Controller
         $validatedData = $request->validate([
             'exercise_type' => 'required|in:pull-ups,dips,push-ups',
             'repetitions' => 'required|integer|min:1',
-            'youtube_link' => 'required|url',
         ]);
 
         $exercise = new Exercise;
         $exercise->exercise_type = $validatedData['exercise_type'];
         $exercise->repetitions = $validatedData['repetitions'];
-        $exercise->youtube_link = $validatedData['youtube_link'];
         $exercise->user_id = Auth::id();
         $exercise->save();
 
