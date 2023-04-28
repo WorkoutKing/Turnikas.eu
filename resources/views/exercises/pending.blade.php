@@ -34,6 +34,12 @@
                                             <td>{{ $exercise->repetitions }}</td>
                                             <td>{{ $exercise->user->name }}</td>
                                             <td>
+                                                <video width="320" height="240" controls>
+                                                    <source src="{{ asset('storage/' . $exercise->video) }}" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </td>
+                                            <td>
                                                 <form method="POST" action="{{ route('exercises.approve', $exercise) }}">
                                                     @csrf
                                                     @method('PUT')

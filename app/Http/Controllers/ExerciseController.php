@@ -26,15 +26,23 @@ class ExerciseController extends Controller
         $validatedData = $request->validate([
             'exercise_type' => 'required|in:pull-ups,dips,push-ups',
             'repetitions' => 'required|integer|min:1',
+            'video' => 'required|file|max:500000',
         ]);
 
         $exercise = new Exercise;
         $exercise->exercise_type = $validatedData['exercise_type'];
         $exercise->repetitions = $validatedData['repetitions'];
         $exercise->user_id = Auth::id();
-        $exercise->save();
 
-        return redirect()->back()->with('success', 'Exercise uploaded successfully. It will be reviewed before appearing on the site.');
+        if ($request->hasFile('video')) {
+            $videoPath = $request->file('video')->store('public/videos');
+            $exercise->video = str_replace('public/', '', $videoPath);
+        }
+        if ($exercise->save()) {
+            return redirect()->back()->with('success', 'Exercise added successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Failed to add exercise.');
+        }
     }
 
     public function approve(Request $request, Exercise $exercise)

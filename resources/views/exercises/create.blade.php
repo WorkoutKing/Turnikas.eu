@@ -13,7 +13,7 @@
                     <div class="card-header">Upload Exercise</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('exercises.store') }}">
+                        <form method="POST" action="{{ route('exercises.store') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
@@ -41,6 +41,18 @@
                                     <input id="repetitions" type="number" class="form-control @error('repetitions') is-invalid @enderror" name="repetitions" value="{{ old('repetitions') }}" required autocomplete="repetitions">
 
                                     @error('repetitions')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="video" class="col-md-4 col-form-label text-md-right">Exercise Video</label>
+                                <div class="col-md-6">
+                                    <input id="video" type="file" class="form-control-file @error('video') is-invalid @enderror" name="video" accept="video/*">
+
+                                    @error('video')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

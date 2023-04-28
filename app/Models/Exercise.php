@@ -13,6 +13,7 @@ class Exercise extends Model
         'exercise_type',
         'repetitions',
         'user_id',
+        'video',
         'approved',
     ];
 
