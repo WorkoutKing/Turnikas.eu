@@ -541,6 +541,7 @@ class ComposerStaticInitab02fe01c996824d7d40acb5a6636321
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Exercise' => __DIR__ . '/../..' . '/app/Models/Exercise.php',
         'App\\Models\\OnlineUser' => __DIR__ . '/../..' . '/app/Models/OnlineUser.php',
+        'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
         'App\\Models\\Skill' => __DIR__ . '/../..' . '/app/Models/Skill.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',

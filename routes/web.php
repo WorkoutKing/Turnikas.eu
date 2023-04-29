@@ -9,6 +9,7 @@ use App\Http\Controllers\ResultController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 
 /*
@@ -89,6 +90,7 @@ Route::middleware(['auth', 'role:superadmin'])->group(function () {
     Route::put('/exercises/{exercise}/approve', [ExerciseController::class, 'approve'])->name('exercises.approve');
     Route::get('/exercises/pending', [ExerciseController::class, 'pending'])->name('exercises.pending');
     Route::delete('/exercises/{exercise}', [ExerciseController::class, 'delete'])->name('exercises.delete');
+
 });
 
 
