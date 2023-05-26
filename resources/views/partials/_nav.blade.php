@@ -10,7 +10,7 @@
               <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#!">Privacy Policy</a>
+              <a class="nav-link" href="/privacy">Privacy Policy</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#!">Contacts</a>
