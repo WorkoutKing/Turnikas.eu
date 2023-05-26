@@ -7,22 +7,31 @@
     <img src="https://uk-platform-content.s3.eu-west-2.amazonaws.com/articles/outdorrcover-2046.jpg" class="img-fluid header-image" alt="Cover Picture">
   </div>
 </header>
-Top 3 Pull Ups
-@foreach ($usersByExerciseType['pull-ups'] as $user)
-    <p>{{ $user->name }} - {{ $user->exercises->where('exercise_type', 'pull-ups')->max('repetitions') }} repetitions</p>
-@endforeach
-Top 3 Dips
-@foreach ($usersByExerciseType['dips'] as $user)
-    <p>{{ $user->name }} - {{ $user->exercises->where('exercise_type', 'dips')->max('repetitions') }} repetitions</p>
-@endforeach
-Top 3 Push Ups
-@foreach ($usersByExerciseType['push-ups'] as $user)
-    <p>{{ $user->name }} - {{ $user->exercises->where('exercise_type', 'push-ups')->max('repetitions') }} repetitions</p>
-@endforeach
+<div class="container top_3_pos">
 
+  <div class="top3">
+    Top 3 Pull Ups
+      @foreach ($usersByExerciseType['pull-ups'] as $user)
+          <p>{{ $user->name }} - {{ $user->exercises->where('exercise_type', 'pull-ups')->max('repetitions') }} repetitions</p>
+      @endforeach
+  </div>
+
+  <div class="top3">
+  Top 3 Dips
+    @foreach ($usersByExerciseType['dips'] as $user)
+        <p>{{ $user->name }} - {{ $user->exercises->where('exercise_type', 'dips')->max('repetitions') }} repetitions</p>
+    @endforeach
+  </div>
+
+  <div class="top3">
+    Top 3 Push Ups
+    @foreach ($usersByExerciseType['push-ups'] as $user)
+        <p>{{ $user->name }} - {{ $user->exercises->where('exercise_type', 'push-ups')->max('repetitions') }} repetitions</p>
+    @endforeach
+  </div>
+
+</div>
 <div class="">
-  <a href="{{ route('users.index') }}">Users</a>
-
     <section class="motivation-section">
         <div class="container">
           <div class="row align-items-center">

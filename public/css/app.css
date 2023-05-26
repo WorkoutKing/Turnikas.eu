@@ -1,71 +1,102 @@
 .header-image {
-  max-height: 300px;
-  width: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+    max-height: 600px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
-
 .footer {
-  background-color: #f5f5f5;
+    background-color: #f5f5f5;
 }
-
 .motivation-section {
-  background-color: #f5f5f5;
-  padding: 60px 0;
+    background-color: #f5f5f5;
+    padding: 60px 0;
 }
-
 .motivation-section img {
-  max-height: 500px;
-  -o-object-fit: contain;
-  object-fit: contain;
-  width: 100%;
+    max-height: 500px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 100%;
 }
-
 .about-section {
-  padding: 60px 0;
+    padding: 60px 0;
 }
-
 .about-section img {
-  max-height: 500px;
-  -o-object-fit: contain;
-  object-fit: contain;
-  width: 100%;
+    max-height: 500px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 100%;
 }
-
 .navbar-expand-lg .navbar-collapse {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }
-
 img.profile_pic {
-  height: 200px;
-  border-radius: 100%;
-  width: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+    height: 200px;
+    border-radius: 100%;
+    width: 200px;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
-
 .top-1 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ffd700; /* gold */
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700; /* gold */
 }
-
 .top-2 {
-  font-size: 20px;
-  font-weight: bold;
-  color: #c0c0c0; /* silver */
+    font-size: 20px;
+    font-weight: bold;
+    color: #c0c0c0; /* silver */
 }
-
 .top-3 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #cd7f32; /* bronze */
+    font-size: 16px;
+    font-weight: bold;
+    color: #cd7f32; /* bronze */
 }
-
 .trophy {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: contain;
-  margin-right: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    margin-right: 5px;
+}
+img.profile_pict_mini {
+    height: 50px;
+    border-radius: 100%;
+    width: 50px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.nav-extra-class {
+    position: absolute !important;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(224, 224, 226, 0.4) 100%,
+        rgba(224, 224, 226, 0.4) 100%,
+        rgba(255, 255, 255, 0) 0%
+    );
+}
+a.nav-link {
+    font-size: 18px;
+    font-weight: bold;
+}
+.container {
+    max-width: 1350px !important;
+}
+.top_3_pos {
+    display: flex;
+}
+.top3 {
+    width: 33.33%;
+    text-align: center;
+    padding: 20px 0px;
+}
+main {
+    margin-top: 90px;
+}
+.profile_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

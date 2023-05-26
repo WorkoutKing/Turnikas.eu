@@ -1,14 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg nav-extra-class">
   <div class="container-fluid">
-  <a class="navbar-brand" href="/">My Site</a>
+  <a class="navbar-brand" href="/"><img src="#!"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-          <li class="nav-item active">
-              <a class="nav-link" href="/">Home</a>
-          </li>
           <li class="nav-item">
               <a class="nav-link" href="/privacy">Privacy Policy</a>
           </li>
@@ -20,7 +17,7 @@
           @if(Auth::check())
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Hello, {{ Auth::user()->name }}
+                <img class='profile_pict_mini' src="{{ Storage::url(Auth::user()->profile_picture) }}" alt="Profile Picture">
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="/profile">Profile</a>

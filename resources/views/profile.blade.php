@@ -14,24 +14,28 @@
         </div>
     @endif
     <main>
-        @if (Auth::user()->profile_picture)
-            <img class='profile_pic' src="{{ Storage::url(Auth::user()->profile_picture) }}" alt="Profile Picture">
-        @else
-            <p>No profile picture</p>
-        @endif
+        <div class="profile_section">
+            @if (Auth::user()->profile_picture)
+                <img class='profile_pic' src="{{ Storage::url(Auth::user()->profile_picture) }}" alt="Profile Picture">
+            @else
+                <p>No profile picture</p>
+            @endif
 
-        <h2>User Level</h2>
-        <div>
-            Total Points: {{ $totalPoints }}
+            <h2>User Level</h2>
+            <div>
+                Total Points: {{ $totalPoints }}
+            </div>
+            <div>
+                Unique Categories: {{ $uniqueCategoriesCount }}
+            </div>
+             <p>Profile picture last updated:
+                {{ Auth::user()->profile_picture_updated_at ? Auth::user()->profile_picture_updated_at->diffForHumans() : 'Never' }}
+            </p>
         </div>
-        <div>
-            Unique Categories: {{ $uniqueCategoriesCount }}
-        </div>
+        <div class="admin-section">
+            <p>ADMIN ZONA</p>
+        <a href="{{ route('users.index') }}">Users</a>
 
-
-        <p>Profile picture last updated:
-            {{ Auth::user()->profile_picture_updated_at ? Auth::user()->profile_picture_updated_at->diffForHumans() : 'Never' }}
-        </p>
         <a href="skills/pending">
             Pending skills
         </a>
@@ -50,9 +54,26 @@
         <a href="/exercises/pending">
             Excercises Pending
         </a>
-        <a href="/categories">
-            Categories Show
-        </a>
+        </div>
+        <div class="user-section">
+            <p>USER ZONA</p>
+            <a href="/categories">
+                Categories Show
+            </a>
+            <a>
+                Exercises Show
+            </a>
+            <a href="exercises/create">
+                Excercises create
+            </a>
+            <a>
+                Skills
+            </a>
+            <a href="/skills/create">
+                Skills create
+            </a>
+        </div>
+       
 
         <form method="POST" action="{{ route('update-profile-picture') }}" enctype="multipart/form-data">
             @csrf
