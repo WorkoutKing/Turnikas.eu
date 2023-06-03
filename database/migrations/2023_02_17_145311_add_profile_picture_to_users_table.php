@@ -14,7 +14,7 @@ class AddProfilePictureToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('profile_picture')->default('/profile-pictures/VY7CjLgIvq90UXLZCqqd8smTiO7xSE9gFEjDcx08.png');
+            $table->string('profile_picture')->default('/profile-pictures/default-user-icon-13.jpg');
         });
     }
 

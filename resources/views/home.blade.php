@@ -3,7 +3,7 @@
 
 @section('content')
 <header>
-  <div class="container-fluid p-0">
+  <div class="container-fluid p-0 extra-header-img">
     <img src="https://uk-platform-content.s3.eu-west-2.amazonaws.com/articles/outdorrcover-2046.jpg" class="img-fluid header-image" alt="Cover Picture">
   </div>
 </header>

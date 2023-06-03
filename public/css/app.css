@@ -59,14 +59,13 @@ img.profile_pic {
     margin-right: 5px;
 }
 img.profile_pict_mini {
-    height: 50px;
+    height: 22px;
     border-radius: 100%;
-    width: 50px;
+    width: 22px;
     -o-object-fit: cover;
     object-fit: cover;
 }
 .nav-extra-class {
-    position: absolute !important;
     width: 100%;
     top: 0;
     background: linear-gradient(
@@ -99,4 +98,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.extra-header-img {
+    margin-top: -59px;
 }

@@ -6,7 +6,8 @@
         {{ session('success') }}
     </div>
 @endif
-<a href="/users/create">Create Users</a>
+{{--  <labe>Currently down! </labe>
+<a href="/users/create">Create Users</a>  --}}
 <table class="table">
     <thead class="thead-dark">
         <tr>

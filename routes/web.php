@@ -9,6 +9,7 @@ use App\Http\Controllers\ResultController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ProfilesController;
 use Illuminate\Http\Request;
 
 /*
@@ -48,7 +49,9 @@ Route::post('/update-profile-picture', function (Request $request) {
 })->name('update-profile-picture');
 // Roues By Roles
 Route::middleware(['auth', 'role:user'])->group(function () {
-
+    // Online Routes
+    Route::get('/online', [OnlineUserController::class, 'onlineUser'])->name('onlineUser');
+    Route::get('/users/{id}', [ProfilesController::class, 'showing'])->name('profiles.show');
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
@@ -56,13 +59,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 });
 
 Route::middleware(['auth', 'role:superadmin'])->group(function () {
-    // Online Routes
-    Route::get('/online', [OnlineUserController::class, 'onlineUser'])->name('onlineUser');
 
     // Users Routes
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/privacy', [UserController::class, 'privacy'])->name('users.privacy');
-    Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::get('/result', [ResultController::class, 'store'])->name('results.store');
@@ -70,6 +70,8 @@ Route::middleware(['auth', 'role:superadmin'])->group(function () {
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
+    Route::get('/online', [OnlineUserController::class, 'onlineUser'])->name('onlineUser');
+    Route::get('/users/{id}', [ProfilesController::class, 'showing'])->name('profiles.show');
 
     // Categories Routes
     Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
@@ -91,7 +93,6 @@ Route::middleware(['auth', 'role:superadmin'])->group(function () {
     Route::put('/exercises/{exercise}/approve', [ExerciseController::class, 'approve'])->name('exercises.approve');
     Route::get('/exercises/pending', [ExerciseController::class, 'pending'])->name('exercises.pending');
     Route::delete('/exercises/{exercise}', [ExerciseController::class, 'delete'])->name('exercises.delete');
-
 });
 
 

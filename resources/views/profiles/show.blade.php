@@ -12,5 +12,8 @@
         <div>
             Unique Categories: {{ $uniqueCategoriesCount }}
         </div>
+          <div>
+            Excercise uploads: {{ $exercises }}
+        </div>
     </div>
 @endsection

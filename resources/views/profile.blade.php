@@ -60,15 +60,15 @@
             <a href="/categories">
                 Categories Show
             </a>
-            <a>
-                Exercises Show
-            </a>
-            <a href="exercises/create">
-                Excercises create
-            </a>
-            <a>
-                Skills
-            </a>
+          <a href="exercises">
+            Excercises
+        </a>
+        <a href="exercises/create">
+            Excercises create
+        </a>
+        <a href="/skill">
+            Skill
+        </a>
             <a href="/skills/create">
                 Skills create
             </a>
