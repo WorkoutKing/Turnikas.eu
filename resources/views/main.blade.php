@@ -22,8 +22,6 @@
 
     </head>
     <body>
-        @include('partials._nav')
-
         <div>
             <!-- Page content-->
             @yield('content')

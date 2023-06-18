@@ -12,7 +12,7 @@
     <thead class="thead-dark">
         <tr>
             <th scope="col">Name (testas)</th>
-            <th scope="col">Email</th>
+            <th scope="col">Email (testas)</th>
             <th scope="col">Role</th>
             <th scope="col">Online Status</th>
             <th scope="col">IP Address</th>

@@ -1,41 +1,17 @@
-<nav class="navbar navbar-expand-lg nav-extra-class">
-  <div class="container-fluid">
-  <a class="navbar-brand" href="/"><img src="#!"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-          <li class="nav-item">
-              <a class="nav-link" href="/privacy">Privacy Policy</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#!">Contacts</a>
-          </li>
-      </ul>
-      <ul class="navbar-nav">
-          @if(Auth::check())
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class='profile_pict_mini' src="{{ Storage::url(Auth::user()->profile_picture) }}" alt="Profile Picture">
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/profile">Profile</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/skill">Skill</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/logout">Logout</a>
-              </div>
-          </li>
-          @else
-          <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-          </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/register">Register</a>
-            </li>
-          @endif
-      </ul>
-  </div>
-</div>
-</nav>
+      <div class="nav-menu">
+        <div class="branding-web">
+          <a class="nav-brand-name">MADSTARS</a>
+        </div>
+        <div class="nav-links">
+          <ul class="top-nav">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="">Inspiration</a></li>
+            <li><a href="">Challenges</a></li>
+            @if(Auth::check())
+                <li><a href="/profile">Profile</a></li>
+            @else
+                <li><a href="/login">Login</a></li>
+            @endif
+          </ul>
+        </div>
+      </div>
