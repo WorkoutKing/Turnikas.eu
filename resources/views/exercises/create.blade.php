@@ -1,3 +1,4 @@
+@include('partials._nav')
 @extends('main')
 
 @section('content')
@@ -53,6 +54,18 @@
                                     <input id="video" type="file" class="form-control-file @error('video') is-invalid @enderror" name="video" accept="video/*">
 
                                     @error('video')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="youtube_url" class="col-md-4 col-form-label text-md-right">Youtube Video</label>
+                                <div class="col-md-6">
+                                    <input id="youtube_url" type="url" class="form-control-file @error('youtube_url') is-invalid @enderror" name="youtube_url" >
+
+                                    @error('youtube_url')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

@@ -1,3 +1,4 @@
+@include('partials._nav')
 @extends('main')
 
 
@@ -18,6 +19,7 @@
                     <th>Number</th>
                     <th>Points</th>
                     <th>Video</th>
+                    <th>YT link</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -34,6 +36,7 @@
                                 Your browser does not support the video tag.
                             </video>
                         </td>
+                        <td>{{ $skill->youtube_url }}</td>
                         <td>
                             <form method="POST" action="{{ route('skills.approve', $skill) }}">
                                 @csrf

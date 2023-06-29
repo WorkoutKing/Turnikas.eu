@@ -27,6 +27,8 @@ class ExerciseController extends Controller
             'exercise_type' => 'required|in:pull-ups,dips,push-ups',
             'repetitions' => 'required|integer|min:1',
             'video' => 'required|file|max:500000',
+            'youtube_url' => 'nullable|url',
+
         ]);
 
         $exercise = new Exercise;
@@ -38,6 +40,8 @@ class ExerciseController extends Controller
             $videoPath = $request->file('video')->store('public/videos');
             $exercise->video = str_replace('public/', '', $videoPath);
         }
+        $exercise->youtube_url = $validatedData['youtube_url'];
+
         if ($exercise->save()) {
             return redirect()->back()->with('success', 'Exercise added successfully.');
         } else {
@@ -47,26 +51,26 @@ class ExerciseController extends Controller
 
     public function approve(Request $request, Exercise $exercise)
     {
-            $exercise->approved = true;
-            $exercise->save();
+        $exercise->approved = true;
+        $exercise->save();
 
-            return redirect()->back()->with('success', 'Exercise approved successfully.');
+        return redirect()->back()->with('success', 'Exercise approved successfully.');
     }
     public function pending()
     {
         $exercises = Exercise::select('exercises.*')
-        ->join(
-            DB::raw('(SELECT user_id, exercise_type, MIN(created_at) as created_at FROM exercises WHERE approved = false GROUP BY user_id, exercise_type) as t'),
-            function($join) {
-                $join->on('exercises.user_id', '=', 't.user_id');
-                $join->on('exercises.exercise_type', '=', 't.exercise_type');
-                $join->on('exercises.created_at', '=', 't.created_at');
-            }
-        )
-        ->orderBy('repetitions')
-        ->paginate(30);
+            ->join(
+                DB::raw('(SELECT user_id, exercise_type, MIN(created_at) as created_at FROM exercises WHERE approved = false GROUP BY user_id, exercise_type) as t'),
+                function ($join) {
+                    $join->on('exercises.user_id', '=', 't.user_id');
+                    $join->on('exercises.exercise_type', '=', 't.exercise_type');
+                    $join->on('exercises.created_at', '=', 't.created_at');
+                }
+            )
+            ->orderBy('repetitions')
+            ->paginate(30);
 
-    return view('exercises.pending', compact('exercises'));
+        return view('exercises.pending', compact('exercises'));
 
     }
     public function delete(Exercise $exercise)

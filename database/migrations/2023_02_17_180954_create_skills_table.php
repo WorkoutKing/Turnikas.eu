@@ -19,6 +19,7 @@ class CreateSkillsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->integer('number');
             $table->boolean('approved')->default(0);
+            $table->string('youtube_url')->nullable();
             $table->timestamps();
         });
 

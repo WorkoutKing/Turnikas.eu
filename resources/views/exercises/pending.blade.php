@@ -1,3 +1,4 @@
+@include('partials._nav')
 @extends('main')
 
 @section('content')
@@ -24,6 +25,7 @@
                                         <th scope="col">Repetitions</th>
                                         <th scope="col">User</th>
                                         <th scope="col">YouTube Link</th>
+                                        <th scope="col">Video</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -33,6 +35,7 @@
                                             <td>{{ $exercise->exercise_type }}</td>
                                             <td>{{ $exercise->repetitions }}</td>
                                             <td>{{ $exercise->user->name }}</td>
+                                            <td>{{ $exercise->youtube_url }}</td>
                                             <td>
                                                 <video width="320" height="240" controls>
                                                     <source src="{{ asset('storage/' . $exercise->video) }}" type="video/mp4">

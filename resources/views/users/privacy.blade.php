@@ -1,5 +1,7 @@
 @extends('main')
 
+@include('partials._nav')
+
 @section('content')
     <div class="container">
 <h1>Privacy Policy</h1>

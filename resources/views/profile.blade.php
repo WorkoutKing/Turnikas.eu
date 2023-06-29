@@ -3,7 +3,6 @@
 
 
 @section('content')
-    @include('partials._header')
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -14,6 +13,25 @@
             {{ session('error') }}
         </div>
     @endif
+    <div class="extra_hero_pad">
+        <div class="hero_big">
+            <div class="hero_h1">
+                <div class="wrapper">
+                    <div class="marquee">
+                        <h1>
+                            USER PROFILE PAGE&nbsp;USER PROFILE PAGE&nbsp;USER PROFILE PAGE&nbsp;USER PROFILE PAGE
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile_p">
+        <div class="block_5_decoration"></div>
+        <div class="block_6_decoration"></div>
+        <div class="block_7_decoration"></div>
+        <div class="block_8_decoration"></div>
+    </div>
     <main>
         <div class="profile_section">
             @if (Auth::user()->profile_picture)
@@ -74,7 +92,7 @@
                 Skills create
             </a>
         </div>
-       
+
 
         <form method="POST" action="{{ route('update-profile-picture') }}" enctype="multipart/form-data">
             @csrf

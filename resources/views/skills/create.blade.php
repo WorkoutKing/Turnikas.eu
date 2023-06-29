@@ -1,3 +1,4 @@
+@include('partials._nav')
 @extends('main')
 
 
@@ -32,6 +33,14 @@
             <label for="video">Video:</label>
             <input type="file" id="video" name="video" accept="video/*" max="200000">
             @error('video')
+                <div>{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div>
+            <label for="youtube_url">YouTube URL:</label>
+            <input type="text" id="youtube_url" name="youtube_url" value="{{ old('youtube_url') }}">
+            @error('youtube_url')
                 <div>{{ $message }}</div>
             @enderror
         </div>

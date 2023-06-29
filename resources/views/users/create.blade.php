@@ -1,3 +1,4 @@
+@include('partials._nav')
 @extends('main')
 
 @section('content')
@@ -55,7 +56,7 @@
 
                                 </select>
                             </div>
-        
+
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Create') }}

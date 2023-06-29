@@ -14,6 +14,7 @@ class Exercise extends Model
         'repetitions',
         'user_id',
         'video',
+        'youtube_url',
         'approved',
     ];
 
