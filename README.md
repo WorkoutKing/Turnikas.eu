@@ -46,7 +46,7 @@ Password => 123456789</br>
 </b>
 <h2>Uploaded Pictures</h2>
 <p>To see uploaded pictures you need to run this:</p>
-php artisan storage:link<br>
+<b>php artisan storage:link</b><br>
 <br>
 <br>
 <br>
