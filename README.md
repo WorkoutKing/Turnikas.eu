@@ -29,7 +29,7 @@ DB_PASSWORD=<br>
 </p>
 
 <h2>Final steps</h2>
-<br>
+<p>To finish setup, enter commands one by one in the terminal</p>
 <b>
 npm run dev<br>
 php artisan key:generate<br>
