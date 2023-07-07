@@ -45,7 +45,9 @@ php artisan db:seed <br>
 Password => 123456789</br>
 </b>
 <h2>Uploaded Pictures</h2>
-<p>To see uploaded pictures you need to run this:</p><br>
+<p>To see uploaded pictures you need to run this:</p>
 php artisan storage:link<br>
-
+<br>
+<br>
+<br>
 <p><b>Project is in development!</b></p>
