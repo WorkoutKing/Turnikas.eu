@@ -16,13 +16,9 @@
     <div class="extra_hero_pad">
         <div class="hero_big">
             <div class="hero_h1">
-                <div class="wrapper">
-                    <div class="marquee">
-                        <h1>
-                            USER PROFILE PAGE&nbsp;USER PROFILE PAGE&nbsp;USER PROFILE PAGE&nbsp;USER PROFILE PAGE
-                        </h1>
-                    </div>
-                </div>
+                <h1 class="extra_profile">
+                    DSTAR'S MADSTAR'S MADSTAR
+                </h1>
             </div>
         </div>
     </div>
@@ -54,7 +50,9 @@
         <div class="admin-section">
             <p>ADMIN ZONA</p>
         <a href="{{ route('users.index') }}">Users</a>
-
+        <a href="/categories">
+            Categories Show
+        </a>
         <a href="skills/pending">
             Pending skills
         </a>
@@ -73,26 +71,31 @@
         <a href="/exercises/pending">
             Excercises Pending
         </a>
+        <div>
+            Nustatytmai (Soon)
+        </div>
         </div>
         <div class="user-section">
             <p>USER ZONA</p>
             <a href="/categories">
                 Categories Show
             </a>
-          <a href="exercises">
-            Excercises
-        </a>
-        <a href="exercises/create">
-            Excercises create
-        </a>
-        <a href="/skill">
-            Skill
-        </a>
+            <a href="exercises/create">
+                Excercises create
+            </a>
             <a href="/skills/create">
                 Skills create
             </a>
+            <div>
+                My uploads excercises (Soon)
+            </div>
+            <div>
+                My uploads Skills (Soon)
+            </div>
+            <div>
+                Nustatytmai (Soon)
+            </div>
         </div>
-
 
         <form method="POST" action="{{ route('update-profile-picture') }}" enctype="multipart/form-data">
             @csrf

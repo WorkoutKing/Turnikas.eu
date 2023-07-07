@@ -21,8 +21,8 @@ class SkillController extends Controller
         $validatedData = $request->validate([
             'category_id' => 'required|exists:categories,id',
             'number' => 'required|integer',
-            'video' => 'mimetypes:video/avi,video/mpeg,video/quicktime,video/mp4|max:200000',
-            'youtube_url' => 'nullable|url', // Validate the YouTube URL (optional)
+            'video' => 'mimetypes:video/avi,video/mpeg,video/quicktime,video/mp4|max:300000',
+            'youtube_url' => 'nullable|url',
         ]);
 
         $skill = new Skill();

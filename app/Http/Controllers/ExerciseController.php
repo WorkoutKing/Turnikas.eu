@@ -26,7 +26,7 @@ class ExerciseController extends Controller
         $validatedData = $request->validate([
             'exercise_type' => 'required|in:pull-ups,dips,push-ups',
             'repetitions' => 'required|integer|min:1',
-            'video' => 'required|file|max:500000',
+            'video' => 'file|max:300000',
             'youtube_url' => 'nullable|url',
 
         ]);
