@@ -4,6 +4,8 @@
 <p>Laravel projects requires extra setups before it can run on your local computers.</p>
 <p>
     First we will install Node Module and Vendor files:<br>
+    <br>
+    <p>Run this in terminal:</p>
     <strong>npm i</strong><br>
     <strong>composer install</strong><br>
 </p>
@@ -14,7 +16,8 @@ To setup your .env, kindly duplicate your .env.example file and rename the dupli
 </p>
 
 <h2>Setup Database</h2>
-<p>On your .env file, locate this block of code below.
+<p>On your .env file, locate this block of code below.<br>
+<br>
 <b>
 DB_CONNECTION=mysql<br>
 DB_HOST=127.0.0.1<br>
@@ -26,21 +29,23 @@ DB_PASSWORD=<br>
 </p>
 
 <h2>Final steps</h2>
-<b></b>
+<br>
+<b>
 npm run dev<br>
 php artisan key:generate<br>
 php artisan migrate <br>
 php artisan db:seed <br>
 </b>
 
-<h2>To open project in the website you need to run:</h2><br>
+<h2>To open project in the website you need to run:</h2>
 <strong>php artisan serve</strong>
 
-<h2>Login as admin:</h2><br>
+<h2>Login as admin:</h2>
 <b>Email => admin@gmail.com,<br>
 Password => 123456789</br>
 
-<h3>And to see pictures if you make uploads you need create storage link:</h3><br>
+<h2>Uploaded Pictures</h2>
+<p>To see uploaded pictures you need to run this:</p><br>
 php artisan storage:link<br>
 
 <p><b>Project is in development!</b></p>
