@@ -29,7 +29,7 @@ DB_PASSWORD=<br>
 </p>
 
 <h2>Final steps</h2>
-<p>To finish setup, enter commands one by one in the terminal</p>
+<p>To finish setup, enter commands one by one in the terminal:</p>
 <b>
 npm run dev<br>
 php artisan key:generate<br>
@@ -43,7 +43,7 @@ php artisan db:seed <br>
 <h2>Login as admin:</h2>
 <b>Email => admin@gmail.com,<br>
 Password => 123456789</br>
-
+</b>
 <h2>Uploaded Pictures</h2>
 <p>To see uploaded pictures you need to run this:</p><br>
 php artisan storage:link<br>
