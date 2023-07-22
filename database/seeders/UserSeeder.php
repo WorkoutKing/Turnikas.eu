@@ -20,4 +20,3 @@ class UserSeeder extends Seeder
         $admin->save();
     }
 }
-

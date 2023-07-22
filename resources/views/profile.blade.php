@@ -104,7 +104,7 @@
         </form>
 
 
-        <h1>{{ $user->name }}'s Uploads</h1>
+        <h1>{{ $user->name }}s Uploads</h1>
         <table>
             <thead>
                 <tr>
