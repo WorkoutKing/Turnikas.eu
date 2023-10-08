@@ -47,53 +47,64 @@
                 {{ Auth::user()->profile_picture_updated_at ? Auth::user()->profile_picture_updated_at->diffForHumans() : 'Never' }}
             </p>
         </div>
-        <div class="admin-section">
-            <p>ADMIN ZONA</p>
-        <a href="{{ route('users.index') }}">Users</a>
-        <a href="/categories">
-            Categories Show
-        </a>
-        <a href="skills/pending">
-            Pending skills
-        </a>
-        <a href="/skill">
-            Skill
-        </a>
-        <a href="/skills/create">
-            Skills create
-        </a>
-        <a href="exercises">
-            Excercises
-        </a>
-        <a href="exercises/create">
-            Excercises create
-        </a>
-        <a href="/exercises/pending">
-            Excercises Pending
-        </a>
-        <div>
-            Nustatytmai (Soon)
-        </div>
-        </div>
-        <div class="user-section">
-            <p>USER ZONA</p>
+        <div class="profile_content_width">
+            <div class="admin-section">
+                <p>ADMIN ZONA</p>
+            <a href="{{ route('users.index') }}">Users</a>
             <a href="/categories">
                 Categories Show
             </a>
-            <a href="exercises/create">
-                Excercises create
+            <a href="skills/pending">
+                Pending skills
+            </a>
+            <a href="/skill">
+                Skill
+            </a>
+            <a href="/my-skills">
+                My Skills
             </a>
             <a href="/skills/create">
                 Skills create
             </a>
-            <div>
-                My uploads excercises (Soon)
+            <a href="/exercises">
+                Excercises
+            </a>
+            <a href="/my-exercises">
+                My Excercises
+            </a>
+            <a href="/exercises/create">
+                Excercises create
+            </a>
+            <a href="/exercises/pending">
+                Excercises Pending
+            </a>
+            <a href="/logout">
+                Logout
+            </a>
+            <a>
+                Nustatymai (Soon)
+            </a>
             </div>
-            <div>
-                My uploads Skills (Soon)
-            </div>
-            <div>
-                Nustatytmai (Soon)
+            <div class="admin-section">
+                <p>USER ZONA</p>
+                <a href="/categories">
+                    Categories Show
+                </a>
+                <a href="exercises/create">
+                    Excercises create
+                </a>
+                <a href="/skills/create">
+                    Skills create
+                </a>
+                <a href="/my-exercises">
+                    My Excercises
+                </a>
+                <a href="/my-skills">
+                    My Skills
+                </a>
+                <a>
+                    Nustatymai (Soon)
+                </a>
             </div>
         </div>
 
@@ -129,7 +140,7 @@
         </table>
 
         <div class="card">
-            <div class="card-header">{{ $user->name }}'s Exercises</div>
+            <div class="card-header">{{ $user->name }}s Exercises</div>
 
             <div class="card-body">
                 @if ($exercises->isEmpty())

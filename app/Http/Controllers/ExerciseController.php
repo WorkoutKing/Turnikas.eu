@@ -15,6 +15,18 @@ class ExerciseController extends Controller
 
         return view('exercises.index', compact('exercises'));
     }
+    public function myExercise()
+    {
+        $user = Auth::user();
+
+        $exercises = Exercise::where('user_id', $user->id)
+            ->where('approved', true)
+            ->orderBy('exercise_type')
+            ->orderBy('repetitions')
+            ->paginate(30);
+
+        return view('exercises.myexercises', compact('exercises'));
+    }
 
     public function create()
     {

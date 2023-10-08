@@ -662,9 +662,158 @@ p.online_f a {
 }
 .admin-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .user-section {
     display: flex;
     flex-direction: column;
+    max-width: 1000px;
+}
+.profile_content_width {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-section p {
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+}
+.admin-section a {
+    width: 49%;
+    margin-bottom: 25px;
+    text-align: center;
+    border: 1px solid #000;
+    padding: 20px;
+    border-radius: 5px;
+    color: #000;
+    font-weight: 500;
+    font-size: 20px;
+}
+.admin-section a {
+    text-decoration: none;
+    position: relative;
+    color: #000; /* Change the text color to your preference */
+}
+.admin-section a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to right, transparent, transparent),
+        url(https://t4.ftcdn.net/jpg/06/41/35/09/360_F_641350961_FZdc57WUCsCd6dhsL1R9ClfSN29uB72J.jpg);
+    background-size: 25% 100%; /* Use 'auto' for width and 100% for height to maintain aspect ratio */
+    transition: width 1s ease;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.admin-section a:hover::before {
+    width: 100%;
+}
+.admin-section a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.admin-section a {
+    cursor: url(../images/star.png) 16 16, auto;
+}
+.card-header-l {
+    font-weight: 500;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.full_form_lvl input {
+    margin-bottom: 10px;
+    padding: 13px 20px;
+    border-radius: 0px;
+    border: 1px solid darkslategray;
+    position: relative;
+    z-index: 1;
+}
+.rememb_extra {
+    padding: 0px 5px;
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+}
+.form-control:focus {
+    background-color: #fff !important;
+    border-color: #000 !important;
+    box-shadow: unset !important;
+}
+button.btn.btn-primary.login-btn-x {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid #000;
+    padding: 13px 40px;
+    line-height: 22px;
+    box-shadow: none;
+    text-align: center;
+    letter-spacing: 1;
+    text-transform: uppercase;
+    border-radius: unset;
+    margin: 20px 0px;
+    z-index: 1;
+}
+.login_extra {
+    margin-bottom: 100px;
+}
+.privacy-policy-acce a {
+    color: #969696;
+}
+.privacy-policy-acce a:hover {
+    color: #000;
+    text-decoration: none;
+}
+.return-acc a {
+    color: #969696;
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+}
+.return-acc a:hover {
+    color: #000;
+    text-decoration: none;
+}
+.profile_p.login_extra_shape .block_5_decoration {
+    left: 200px;
+}
+.form-check-input:checked {
+    background-color: #000 !important;
+    border-color: #000 !important;
+}
+.form-check-input:focus {
+    box-shadow: unset !important;
+}
+.form-check-input[type="checkbox"] {
+    border-radius: unset !important;
+}
+.register-button-pos {
+    margin-bottom: 100px;
+}
+.profile_p.register-extra-shape .block_6_decoration {
+    top: 200px;
+    right: 340px;
+    transform: rotate(200deg);
+}
+.profile_p.register-extra-shape .block_7_decoration {
+    right: 340px;
+    transform: rotate(85deg);
+    top: 200px;
+}
+.profile_p.register-extra-shape .block_8_decoration {
+    top: 200px;
+    right: 340px;
+    transform: rotate(-45deg);
+}
+.privacy-policy-acce {
+    padding: 0px 5px;
 }

@@ -10,6 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProfilesController;
+use App\Http\Controllers\PrivacyPolicyController;
 use Illuminate\Http\Request;
 
 /*
@@ -47,7 +48,10 @@ Route::post('/update-profile-picture', function (Request $request) {
         return back()->with('error', 'There was an error uploading the profile picture.');
     }
 })->name('update-profile-picture');
-// Roues By Roles
+// Privacy Policy
+Route::get('/privacy-policy', [PrivacyPolicyController::class, 'showPrivacyPolicy'])->name('privacy-policy');
+
+// Routes By Roles
 Route::middleware(['auth', 'role:user'])->group(function () {
     // Online Routes
     Route::get('/online', [OnlineUserController::class, 'onlineUser'])->name('onlineUser');
@@ -62,7 +66,6 @@ Route::middleware(['auth', 'role:superadmin'])->group(function () {
 
     // Users Routes
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::get('/privacy', [UserController::class, 'privacy'])->name('users.privacy');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::get('/result', [ResultController::class, 'store'])->name('results.store');
@@ -83,10 +86,12 @@ Route::middleware(['auth', 'role:superadmin'])->group(function () {
     Route::post('skills/{skill}/approve', [SkillController::class, 'approve'])->name('skills.approve');
     Route::put('/skills/{skill}/notapprove', [SkillController::class, 'notapprove'])->name('skills.notapprove');
     Route::get('/skill', [SkillController::class, 'index'])->name('skills.index');
+    Route::get('/my-skills', [SkillController::class, 'mySkills'])->name('skills.myskills');
     Route::get('skills/create', [SkillController::class, 'create'])->name('skills.create');
     Route::post('/skills', [SkillController::class, 'store'])->name('skills.store');
 
     // Exercises Routes
+    Route::get('/my-exercises', [ExerciseController::class, 'myExercise'])->name('exercises.myexercises');
     Route::get('/exercises', [ExerciseController::class, 'index'])->name('exercises.index');
     Route::get('/exercises/create', [ExerciseController::class, 'create'])->name('exercises.create');
     Route::post('/exercises', [ExerciseController::class, 'store'])->name('exercises.store');

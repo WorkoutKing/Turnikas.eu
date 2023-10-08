@@ -5,7 +5,7 @@
        </div>
    <div class="nav-links">
       <ul class="top-nav">
-        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
         <li><a href="">Inspiration</a></li>
         <li><a href="">Challenges</a></li>
           @if(Auth::check())

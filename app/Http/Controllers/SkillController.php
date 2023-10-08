@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
 class SkillController extends Controller
@@ -14,6 +15,18 @@ class SkillController extends Controller
     {
         $pendingSkills = Skill::where('approved', 1)->with('category')->orderBy('user_id')->paginate(30);
         return view('skills.index', compact('pendingSkills'));
+    }
+    public function mySkills()
+    {
+        $user = Auth::user();
+
+        $userSkills = Skill::where('user_id', $user->id)
+            ->where('approved', 1)
+            ->with('category')
+            ->orderBy('created_at', 'desc')
+            ->paginate(30);
+
+        return view('skills.myskills', compact('userSkills'));
     }
 
     public function store(Request $request)

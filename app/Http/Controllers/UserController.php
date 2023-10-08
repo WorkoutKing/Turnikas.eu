@@ -44,11 +44,6 @@ class UserController extends Controller
 
         return view('users.index', compact('users', 'onlineUsers'));
     }
-    public function privacy()
-    {
-        return view('users.privacy');
-    }
-
     public function destroy(User $user)
     {
         try {

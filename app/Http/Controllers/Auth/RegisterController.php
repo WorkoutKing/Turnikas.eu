@@ -54,8 +54,11 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'privacy_policy' => ['required', 'accepted'],
         ]);
     }
+
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -65,17 +68,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'privacy_policy_accepted' => isset($data['privacy_policy']),
         ]);
-    
+
         // Set default role for new users
         $user->role_id = Role::where('name', Role::ROLE_USER)->first()->id;
         $user->save();
-    
+
         return $user;
     }
-    
+
 }
